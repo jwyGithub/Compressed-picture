@@ -1,4 +1,0 @@
-[2020-02-10T21:58:15.447] [WARN] http - ::ffff:127.0.0.1 - - "OPTIONS /react/chat HTTP/1.1" 204 0 "http://localhost:3000/chat" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-10T21:58:16.097] [WARN] http - ::ffff:127.0.0.1 - - "OPTIONS /react/chat HTTP/1.1" 204 0 "http://localhost:3000/chat" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-10T21:58:17.219] [WARN] http - ::ffff:127.0.0.1 - - "OPTIONS /react/chat HTTP/1.1" 204 0 "http://localhost:3000/chat" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-10T22:55:46.575] [WARN] http - ::ffff:127.0.0.1 - - "OPTIONS /react/chat HTTP/1.1" 204 0 "http://localhost:3000/chat" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"

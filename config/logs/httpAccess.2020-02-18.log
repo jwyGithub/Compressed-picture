@@ -1,7 +1,0 @@
-[2020-02-18T23:53:17.179] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:55:30.120] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:55:56.390] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:56:53.447] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:57:00.895] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:57:50.393] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-18T23:58:52.655] [WARN] http - ::ffff:127.0.0.1 - - "GET /react/userinfo HTTP/1.1" 200 145 "http://localhost:3000/my" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"

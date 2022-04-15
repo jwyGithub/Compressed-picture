@@ -1,7 +1,0 @@
-[2020-02-23T13:12:43.451] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "vscode-restclient"
-[2020-02-23T13:12:47.414] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "vscode-restclient"
-[2020-02-23T13:13:05.395] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "vscode-restclient"
-[2020-02-23T13:17:04.356] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "vscode-restclient"
-[2020-02-23T13:17:32.604] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0"
-[2020-02-23T13:57:28.048] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 19 "" "vscode-restclient"
-[2020-02-23T13:58:31.592] [WARN] http - ::ffff:127.0.0.1 - - "GET /api/banner HTTP/1.1" 200 38 "" "vscode-restclient"

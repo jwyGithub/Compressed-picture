@@ -1,3 +1,0 @@
-[2019-12-28T09:56:00.755] [WARN] http - ::1 - - "GET /api/banner HTTP/1.1" 200 38 "http://localhost:8080/home" "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
-[2019-12-28T09:56:00.758] [WARN] http - ::1 - - "GET /api/home HTTP/1.1" 200 38 "http://localhost:8080/home" "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
-[2019-12-28T09:56:58.066] [WARN] http - ::1 - - "GET /api/banner HTTP/1.1" 200 38 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:71.0) Gecko/20100101 Firefox/71.0"
