@@ -1,0 +1,40 @@
+{
+    "name": "@graphpack/mixin",
+    "version": "0.0.1",
+    "description": "graph mixin module",
+    "main": "index.js",
+    "module": "dist/graph-mixin.esm-bundler.js",
+    "types": "dist/types/index.d.ts",
+    "unpkg": "dist/graph-mixin.global.js",
+    "jsdelivr": "dist/graph-mixin.global.js",
+    "files": [
+        "index.js",
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "buildOptions": {
+        "name": "graphMixin",
+        "compat": true,
+        "formats": [
+            "esm-bundler",
+            "cjs",
+            "global"
+        ]
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "graph",
+        "mixin"
+    ],
+    "author": "jiangwy",
+    "license": "ISC",
+    "sideEffects": false,
+    "dependencies": {
+        "@graphpack/mixin-config": "workspace:^0.0.1"
+    }
+}

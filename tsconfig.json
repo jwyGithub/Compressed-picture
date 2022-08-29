@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "baseUrl": ". ",
+        "outDir": "dist",
+        "sourceMap": true,
+        "target": "es2015",
+        "useDefineForClassFields": false,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "strict": true,
+        "noUnusedLocals": false,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "removeComments": false,
+        "noImplicitThis": true,
+        "jsx": "preserve",
+        "lib": ["esnext", "dom"],
+        "types": ["node"],
+        "paths": {
+            "@graph/graph-config": ["packages/graph-config"],
+            "@graph/graph-xml": ["packages/graph-xml"]
+        }
+    },
+    "include": ["packages/*/src"]
+}
+
