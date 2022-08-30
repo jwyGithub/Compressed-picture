@@ -12,11 +12,9 @@
 
 ### 3. packages
 
--   @graphpack/mixin
+-   @graph-libs/shared
 
-    -   All method collections
+-   @graph-libs/setting
 
--   @graphpack/mixin-config
-    -   **`globalConfig`** -> global settings
-    -   **`graphConfig`** -> graph global settings
+-   @graph-libs/geometry
 
