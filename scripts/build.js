@@ -4,16 +4,43 @@ const path = require('path');
 
 const targets = fs.readdirSync('packages').filter(dir => fs.statSync(path.join('packages', dir)).isDirectory());
 
-async function build(target) {
-    await execa('rollup', ['-c', '-w', '--environment', `TARGET:${target}`], { stdio: 'inherit' });
+function getEnv() {
+    const args = process.argv.slice(2);
+    return args.reduce((envs, item) => {
+        const name = item.split('=')[0];
+        const value = item.split('=')[1];
+        envs[name] = value;
+        return envs;
+    }, {});
 }
 
-function runParaller(targets, iteratorFn) {
-    const promises = targets.map(iteratorFn);
-    return Promise.allSettled(promises);
+function build(target) {
+    try {
+        const { NODE_ENV } = getEnv();
+        return async () => {
+            console.log('\x1b[33m%s\x1b[0m', `start build ${target} package...`);
+            await execa('rollup', ['-c', '--environment', [`TARGET:${target}`, `NODE_NEV:${NODE_ENV}`]], { stdio: 'inherit' });
+            return `build ${target} package success`;
+        };
+    } catch (error) {
+        console.log('\x1b[33m%s\x1b[0m', `build ${target} package error, reason:${error}`);
+    }
 }
 
-runParaller(targets, build).then(() => {
-    console.log('build success');
-});
+async function* generateSequence(data) {
+    try {
+        for (const fn of data) {
+            yield fn();
+        }
+    } catch (error) {
+        console.log('error', error);
+    }
+}
+
+(async () => {
+    let generator = generateSequence(targets.reverse().map(target => build(target)));
+    for await (let msg of generator) {
+        console.log('\x1b[33m%s\x1b[0m', msg);
+    }
+})();
 

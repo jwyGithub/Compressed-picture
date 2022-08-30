@@ -1,14 +1,15 @@
 {
     "version": "1.0.0",
-    "description": "graph mixin",
+    "description": "graph tools",
     "main": "index.js",
     "scripts": {
-        "build": "node scripts/build.js",
+        "build:dev": "node scripts/build.js NODE_ENV=development",
+        "build:prod": "node scripts/build.js NODE_ENV=production",
         "release": "node scripts/release.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jwyGithub/graph-mixin.git"
+        "url": "git+https://github.com/jwyGithub/Graph-Tools.git"
     },
     "keywords": [
         "mxgraph",
@@ -17,25 +18,32 @@
         "maxGraph",
         "maxgraph"
     ],
-    "author": "",
+    "author": "jiangwy",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/jwyGithub/graph-mixin/issues"
+        "url": "https://github.com/jwyGithub/Graph-Tools/issues"
     },
-    "homepage": "https://github.com/jwyGithub/graph-mixin#readme",
+    "homepage": "https://github.com/jwyGithub/Graph-Tools#readme",
     "devDependencies": {
+        "@babel/core": "^7.18.13",
+        "@babel/plugin-transform-runtime": "^7.18.10",
+        "@babel/runtime-corejs3": "^7.18.9",
+        "@rollup/plugin-babel": "^5.3.1",
+        "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^13.3.0",
+        "@rollup/plugin-replace": "^4.0.0",
         "@types/node": "^18.7.13",
-        "execa": "5",
+        "execa": "5.0.1",
         "prettier": "^2.7.1",
         "rollup": "^2.78.1",
+        "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.33.0",
+        "tslib": "^2.4.0",
         "typescript": "^4.8.2"
     },
-    "dependencies": {
+    "peerDependencies": {
         "@staryea/graph": "workspace:^1.0.1"
     },
     "sideEffects": false
 }
-

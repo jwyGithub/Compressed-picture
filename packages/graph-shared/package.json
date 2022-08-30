@@ -1,0 +1,35 @@
+{
+    "name": "@graph-libs/shared",
+    "version": "0.0.4",
+    "description": "graph tool for shared",
+    "main": "index.js",
+    "module": "dist/graph-shared.esm-bundler.js",
+    "types": "dist/types/index.d.ts",
+    "unpkg": "dist/graph-shared.global.js",
+    "jsdelivr": "dist/graph-shared.global.js",
+    "files": [
+        "index.js",
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "buildOptions": {
+        "name": "graphShared",
+        "compat": true,
+        "formats": [
+            "esm-bundler",
+            "cjs",
+            "cjs.prod",
+            "global",
+            "esm-browser"
+        ]
+    },
+    "keywords": [
+        "graph",
+        "shared"
+    ],
+    "author": "jiangweiye",
+    "license": "ISC"
+}

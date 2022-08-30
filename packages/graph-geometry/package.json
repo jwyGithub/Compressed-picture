@@ -1,0 +1,43 @@
+{
+    "name": "@graph-libs/geometry",
+    "version": "0.0.5",
+    "description": "graph tool for geometry",
+    "main": "index.js",
+    "module": "dist/graph-geometry.esm-bundler.js",
+    "types": "dist/types/index.d.ts",
+    "unpkg": "dist/graph-geometry.global.js",
+    "jsdelivr": "dist/graph-geometry.global.js",
+    "files": [
+        "index.js",
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "buildOptions": {
+        "name": "graphGeometry",
+        "compat": true,
+        "formats": [
+            "esm-bundler",
+            "cjs",
+            "cjs.prod",
+            "global",
+            "esm-browser"
+        ]
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "graph",
+        "geometry"
+    ],
+    "author": "jiangweiye",
+    "license": "ISC",
+    "sideEffects": false,
+    "dependencies": {
+        "@graph-libs/shared": "workspace:^0.0.1",
+        "@staryea/graph": "workspace:^1.0.1"
+    }
+}

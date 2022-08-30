@@ -3,22 +3,22 @@
 -   use npm
 
     ```sh
-    npm i @graphpack/mixin --save
+    npm i @graph-libs/setting --save
     ```
 
 -   use yarn
     ```sh
-    yarn add @graphpack/mixin --save
+    yarn add @graph-libs/setting --save
     ```
 -   use pnpm
     ```sh
-    pnpm add @graphpack/mixin --save
+    pnpm add @graph-libs/setting --save
     ```
 
 ### 2. use
 
 ```typescript
-import { globalConfig, graphConfig } from '@graphpack/mixin';
+import { globalConfig, graphConfig } from '@graph-libs/setting';
 globalConfig(
     graph.graph,
     {

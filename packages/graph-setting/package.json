@@ -1,12 +1,12 @@
 {
-    "name": "@graphpack/mixin",
-    "version": "0.0.1",
-    "description": "graph mixin module",
+    "name": "@graph-libs/setting",
+    "version": "0.0.4",
+    "description": "graph tool for settings",
     "main": "index.js",
-    "module": "dist/graph-mixin.esm-bundler.js",
+    "module": "dist/graph-setting.esm-bundler.js",
     "types": "dist/types/index.d.ts",
-    "unpkg": "dist/graph-mixin.global.js",
-    "jsdelivr": "dist/graph-mixin.global.js",
+    "unpkg": "dist/graph-setting.global.js",
+    "jsdelivr": "dist/graph-setting.global.js",
     "files": [
         "index.js",
         "dist"
@@ -16,12 +16,14 @@
         "registry": "https://registry.npmjs.org/"
     },
     "buildOptions": {
-        "name": "graphMixin",
+        "name": "graphSetting",
         "compat": true,
         "formats": [
             "esm-bundler",
             "cjs",
-            "global"
+            "cjs.prod",
+            "global",
+            "esm-browser"
         ]
     },
     "scripts": {
@@ -29,12 +31,12 @@
     },
     "keywords": [
         "graph",
-        "mixin"
+        "setting"
     ],
-    "author": "jiangwy",
+    "author": "jiangweiye",
     "license": "ISC",
     "sideEffects": false,
     "dependencies": {
-        "@graphpack/mixin-config": "workspace:^0.0.1"
+        "@staryea/graph": "workspace:^1.0.1"
     }
 }
