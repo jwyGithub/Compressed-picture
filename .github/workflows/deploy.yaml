@@ -25,8 +25,7 @@ jobs:
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4.3.3
               with:
-                  branch: gh-pages 
-                  folder: docs/.vitepress/dist 
+                  branch: gh-pages
+                  folder: docs/.vitepress/dist
                   ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-                  ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
 
