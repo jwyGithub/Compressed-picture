@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
     title: 'graph-lib',
-    base: '/docs/',
+    base: '/',
     themeConfig: {
         nav: [
             {
