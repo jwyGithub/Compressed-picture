@@ -54,7 +54,7 @@ function createConfig(format, output) {
         output: {
             ...output,
             globals: {
-                '@staryea/graph': 'graph'
+                '@graph-libs/core': 'graph'
             },
             exports: 'auto'
         },
@@ -81,7 +81,7 @@ function createConfig(format, output) {
                 preventAssignment: true
             })
         ].filter(Boolean),
-        external: ['@staryea/graph']
+        external: ['@graph-libs/core']
     });
 }
 

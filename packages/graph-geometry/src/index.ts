@@ -1,4 +1,4 @@
-import { ConnectionConstraint, Geometry, Point } from '@staryea/graph';
+import { ConnectionConstraint, Geometry, Point } from '@graph-libs/core';
 import { averageDistribution } from '@graph-libs/shared';
 
 export type getGeometry = (step?: number, start?: number) => typeof Geometry;

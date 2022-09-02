@@ -1,4 +1,4 @@
-import { Graph } from '@staryea/graph';
+import { Graph } from '@graph-libs/core';
 
 /**
  * @description graph 配置参数

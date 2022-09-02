@@ -12,6 +12,8 @@
 
 ### 3. packages
 
+-   @graph-libs/core
+
 -   @graph-libs/shared
 
 -   @graph-libs/setting

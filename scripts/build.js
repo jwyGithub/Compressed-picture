@@ -2,7 +2,7 @@ const execa = require('execa');
 const fs = require('fs');
 const path = require('path');
 
-const targets = fs.readdirSync('packages').filter(dir => fs.statSync(path.join('packages', dir)).isDirectory());
+const targets = fs.readdirSync('packages').filter(dir => fs.statSync(path.join('packages', dir)).isDirectory() && dir !== 'graph-core');
 
 function getEnv() {
     const args = process.argv.slice(2);

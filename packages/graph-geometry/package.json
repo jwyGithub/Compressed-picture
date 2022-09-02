@@ -36,8 +36,10 @@
     "author": "jiangweiye",
     "license": "ISC",
     "sideEffects": false,
+    "peerDependencies": {
+        "@graph-libs/core": "workspace:^0.0.1"
+    },
     "dependencies": {
-        "@graph-libs/shared": "workspace:^0.0.1",
-        "@staryea/graph": "workspace:^1.0.1"
+        "@graph-libs/shared": "workspace:^0.0.4"
     }
 }

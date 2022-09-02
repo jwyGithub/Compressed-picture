@@ -1,4 +1,4 @@
-import { InternalEvent, type Graph, RubberBandHandler } from '@staryea/graph';
+import { InternalEvent, type Graph, RubberBandHandler } from '@graph-libs/core';
 
 /**
  * @description graph 配置参数
