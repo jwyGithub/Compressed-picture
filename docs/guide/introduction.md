@@ -1,6 +1,6 @@
 # 简介
 
-### 什么是[graph-lib]()
+### 什么是 graph-lib
 
 graph-lib 是一个 TypeScript library ，使用第三方库[maxgraph](https://github.com/maxGraph/maxGraph)作为基础，结合日常业务场景进一次封装。
 
