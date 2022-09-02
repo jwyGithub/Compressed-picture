@@ -1,8 +1,14 @@
 import { defineConfig } from 'vitepress';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 export default defineConfig({
-    title: 'graph-lib',
     base: '/graph-libs/',
+    locales: {
+        '/': {
+            lang: 'en-US',
+            title: 'Graph-libs'
+        }
+    },
 
     themeConfig: {
         nav: [
@@ -18,7 +24,7 @@ export default defineConfig({
             {
                 text: 'Guide',
                 items: [
-                    { text: 'introduction', link: '/' },
+                    { text: 'introduction', link: '/guide/introduction' },
                     { text: 'Getting Started', link: '/guide/getting-started' }
                 ]
             },
@@ -55,6 +61,13 @@ export default defineConfig({
             }
         ],
         socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-libs' }]
+    },
+    vite: {
+        plugins: [
+            vueJsx({
+                mergeProps: true
+            })
+        ]
     }
 });
 
