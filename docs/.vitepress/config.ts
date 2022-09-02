@@ -46,7 +46,7 @@ export default defineConfig({
             {
                 text: 'Cell',
                 items: [
-                    { text: '初始化', link: '/cell/init.md' },
+                    { text: '初始化', link: '/cell/init' },
                     { text: '获取所有Vertices', link: '/cell/getVertices' },
                     { text: '获取所有Edges', link: '/cell/getEdges' },
                     { text: '设置cell样式', link: '/cell/setCellStyle' }
