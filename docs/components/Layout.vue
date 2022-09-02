@@ -9,7 +9,7 @@ export default defineComponent({
                 <p class='title'>Easy to use graphic library</p>
 
                 <p class='img'>
-                    <img src='/home.png' />
+                    <img src='/graph-libs/home.png' />
                 </p>
                 <p class='buttons'>
                     <a href='/graph-libs/guide/introduction.html'>Getting Started</a>
