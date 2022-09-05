@@ -1,15 +1,15 @@
-# 快速开始
+# Getting Started
 
--   ### 在 script 标签中引入 src 方式
+-   ### script
 
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@staryea/graph-core@0.0.2/dist/graph-core.esm-bundler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@graph-libs/core@0.0.1/dist/maxgraph.js"></script>
     <script>
         const graph = graphCore.init(container);
     </script>
     ```
 
--   ### npm 安装 (推荐)
+-   ### npm
 
     ```sh
     npm install @staryea/graph --save

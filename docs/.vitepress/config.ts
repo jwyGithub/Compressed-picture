@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 
 export default defineConfig({
-    base: '/graph-libs/',
+    base: '/graph-module/',
     locales: {
         '/': {
             lang: 'en-US',
@@ -13,7 +13,7 @@ export default defineConfig({
     themeConfig: {
         nav: [
             {
-                text: '相关链接',
+                text: 'related links',
                 items: [
                     { text: 'mxgraph', link: 'https://github.com/jgraph/mxgraph' },
                     { text: 'maxgraph', link: 'https://github.com/maxGraph/maxGraph' }
@@ -49,15 +49,6 @@ export default defineConfig({
             {
                 text: 'Shape',
                 items: [{ text: 'Global Shape', link: '/shape/global-shape' }]
-            },
-            {
-                text: 'Cell',
-                items: [
-                    { text: '初始化', link: '/cell/init' },
-                    { text: '获取所有Vertices', link: '/cell/getVertices' },
-                    { text: '获取所有Edges', link: '/cell/getEdges' },
-                    { text: '设置cell样式', link: '/cell/setCellStyle' }
-                ]
             }
         ],
         socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-libs' }]

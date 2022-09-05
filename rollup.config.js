@@ -54,7 +54,7 @@ function createConfig(format, output) {
         output: {
             ...output,
             globals: {
-                '@graph-libs/core': 'graph'
+                '@graph-module/core': 'graph'
             },
             exports: 'auto'
         },
@@ -81,7 +81,7 @@ function createConfig(format, output) {
                 preventAssignment: true
             })
         ].filter(Boolean),
-        external: ['@graph-libs/core']
+        external: ['@graph-module/core']
     });
 }
 

@@ -1,6 +1,6 @@
 {
-    "name": "@graph-libs/shared",
-    "version": "0.0.4",
+    "name": "@graph-module/shared",
+    "version": "0.0.1",
     "description": "graph tool for shared",
     "main": "index.js",
     "module": "dist/graph-shared.esm-bundler.js",

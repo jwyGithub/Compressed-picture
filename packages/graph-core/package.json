@@ -1,5 +1,5 @@
 {
-    "name": "@graph-libs/core",
+    "name": "@graph-module/core",
     "version": "0.0.1",
     "description": "recompile the maxgraph package",
     "main": "index.js",

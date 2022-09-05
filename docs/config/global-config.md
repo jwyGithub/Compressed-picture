@@ -1,45 +1,37 @@
-# 全局配置
+# Config
+
+The config module is a global setting for graph and container. You can call it at initialization or in code logic. It takes effect in real time. Pay attention to some call times. Otherwise, some bugs will appear
 
 ## globalConfig
 
-container 全局设置
+-   **type**
 
--   **类型**
-
-```typescript
-interface GlobalConfig {
+    ```typescript
+    interface GlobalConfig {
+        /**
+         * @description 禁用右键菜单
+         * @param true 禁用
+         * @param false 不禁用
+         * @default true
+         */
+        disableContextMenu?: boolean;
+        /**
+         * @description 鼠标框选
+         * @param true  开启
+         * @param false 不开启
+         * @default true
+         */
+        rubberBand?: boolean;
+    }
     /**
-     * @description 禁用右键菜单
-     * @param true 禁用
-     * @param false 不禁用
-     * @default true
+     * @description graph 全局设置
+     * @param config { GlobalConfig }
+     *
      */
-    disableContextMenu?: boolean;
-    /**
-     * @description 鼠标框选
-     * @param true  开启
-     * @param false 不开启
-     * @default true
-     */
-    rubberBand?: boolean;
-}
-/**
- * @description graph 全局设置
- * @param config { GlobalConfig }
- *
- */
-const globalConfig: (
-    graph: Graph,
-    config: GlobalConfig,
-    container?: HTMLElement
-) => void;
-```
+    const globalConfig: (graph: Graph, config: GlobalConfig, container?: HTMLElement) => void;
+    ```
 
--   **详细信息**
-
-    第一个参数 graph，第二个参数是配置对象
-
--   **示例**
+-   **example**
     ```typescript
     globalConfig(
         graph.graph,
@@ -52,9 +44,7 @@ const globalConfig: (
 
 ## graphConfig
 
-container 全局设置
-
--   **类型**
+-   **type**
 
     ```typescript
     interface GraphConfig {
@@ -124,10 +114,6 @@ container 全局设置
     }
     const graphConfig: (graph: Graph, config: GraphConfig) => void;
     ```
-
--   **详细信息**
-
-    第一个参数 graph，第二个参数是配置对象
 
 -   **示例**
     ```typescript

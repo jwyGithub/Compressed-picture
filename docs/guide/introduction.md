@@ -1,37 +1,40 @@
-# 简介
+# Introduction
 
-### 什么是 graph-lib
+### what is graph-lib
 
-graph-lib 是一个 TypeScript library ，使用第三方库[maxgraph](https://github.com/maxGraph/maxGraph)作为基础，结合日常业务场景进一次封装。
+Graph-lib is a secondary encapsulation based on maxgraph, which simplifies the use of API, adds documentation, and sample code. The project is built with monorepo + pnpm + rollup. Tree shaking is supported. Each module of maxgraph is extracted into a separate library and installed on demand to reduce the project volume.
 
-### 什么是 [mxgraph](https://github.com/jgraph/mxgraph/edit/master/README.md)?
+### packages
 
-mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
+-   **`@graph-libs/core`**
 
-The PHP model was deprecated after release 4.0.3 and the archive can be found [here](https://github.com/jgraph/mxgraph-php).
+    ```shell
+      npm install @graph-libs/core -S
+    ```
 
-The unmaintained npm build is [here](https://www.npmjs.com/package/mxgraph)
+    > documentation : [@graph-libs/core](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-core)
 
-We don't support Typescript, but there is a [project to implement this](https://github.com/process-analytics/mxgraph-road-to-DefinitelyTyped), with [this repo](https://github.com/hungtcs/mxgraph-type-definitions) currently used as the lead repo.
+-   **`@graph-libs/shared`**
 
-The mxGraph library uses no third-party software, it requires no plugins and can be integrated in virtually any framework (it's vanilla JS).
+    ```shell
+      npm install @graph-libs/shared -S
+    ```
 
-### 什么是 [maxGraph](https://github.com/maxGraph/maxGraph/blob/development/README.md)?
+    > documentation : [@graph-libs/shared](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-shared)
 
-maxGraph is a TypeScript library which can display and allow interaction with vector diagrams. At a high level, it provides:
+-   **`@graph-libs/setting`**
 
--   **Nodes**, also known as **vertices** which are typically represented by shapes like rectangles.
--   **Edges** which can be lines and arrows which normally point between one node and another.
+    ```shell
+      npm install @graph-libs/setting -S
+    ```
 
-It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of [Graph Theory](https://en.wikipedia.org/wiki/Graph_theory). It is suited towards software which requires finer-grained customization of functionality than off-the-shelf packages.
+    > documentation : [@graph-libs/setting](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-setting)
 
-The `maxGraph` library uses no third-party software, it requires no plugins and can be integrated in virtually any framework (it's vanilla JS).
+-   **`@graph-libs/geometry`**
 
-`maxGraph` is the successor of [mxGraph](https://github.com/jgraph/mxgraph) which is now end of life. At first, it provides the same features as mxGraph and adds
+    ```shell
+      npm install @graph-libs/geometry -S
+    ```
 
--   TypeScript support
--   maintained npm package
--   modern modular, tree shakable, version of mxGraph to reduce the whole package size
-
-New features will follow.
+    > documentation : [@graph-libs/geometry](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-geometry)
 

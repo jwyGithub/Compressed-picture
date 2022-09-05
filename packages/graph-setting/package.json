@@ -1,6 +1,6 @@
 {
-    "name": "@graph-libs/setting",
-    "version": "0.0.4",
+    "name": "@graph-module/setting",
+    "version": "0.0.1",
     "description": "graph tool for settings",
     "main": "index.js",
     "module": "dist/graph-setting.esm-bundler.js",

@@ -1,6 +1,6 @@
 {
-    "name": "@graph-libs/geometry",
-    "version": "0.0.5",
+    "name": "@graph-module/geometry",
+    "version": "0.0.1",
     "description": "graph tool for geometry",
     "main": "index.js",
     "module": "dist/graph-geometry.esm-bundler.js",

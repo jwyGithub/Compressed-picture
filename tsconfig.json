@@ -18,8 +18,7 @@
         "lib": ["esnext", "dom"],
         "types": ["node"],
         "paths": {
-            "@graph/graph-setting": ["packages/graph-setting"],
-            "@graph/graph-xml": ["packages/graph-xml"]
+            "@graph/graph-setting": ["packages/graph-setting"]
         }
     },
     "include": ["packages/*/src"]
