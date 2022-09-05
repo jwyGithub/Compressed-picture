@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ". ",
         "outDir": "dist",
-        "target": "es5",
+        "target": "ES6",
         "useDefineForClassFields": false,
         "module": "esnext",
         "moduleResolution": "node",
@@ -17,8 +17,9 @@
         "jsx": "preserve",
         "lib": ["esnext", "dom"],
         "types": ["node"],
+        "isolatedModules": false,
         "paths": {
-            "@graph/graph-setting": ["packages/graph-setting"]
+            "@graph-module/setting": ["packages/graph-setting"]
         }
     },
     "include": ["packages/*/src"]

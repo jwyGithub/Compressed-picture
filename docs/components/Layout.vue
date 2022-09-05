@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
     name: 'Home',
@@ -9,11 +9,11 @@ export default defineComponent({
                 <p class='title'>Easy to use graphic library</p>
 
                 <p class='img'>
-                    <img src='/graph-libs/home.png' />
+                    <img src='/graph-module/home.png' />
                 </p>
                 <p class='buttons'>
-                    <a href='/graph-libs/guide/introduction.html'>Getting Started</a>
-                    <a href='/graph-libs/guide/getting-started.html'>Install</a>
+                    <a href='/graph-module/guide/introduction.html'>Getting Started</a>
+                    <a href='/graph-module/guide/getting-started.html'>Install</a>
                 </p>
             </div>
         );

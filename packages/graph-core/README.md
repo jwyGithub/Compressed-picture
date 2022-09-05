@@ -1,17 +1,30 @@
-# graph-core
-
-this package from [maxGraph](https://github.com/jwyGithub/maxGraph) compile
-
-graph-libs all package depends on this package
+# @graph-module/core
 
 ## Install
 
-```shell
-npm install @graph-libs/core -S
-```
+-   npm
 
-## Documentation
+    ```shell
+    npm install @graph-module/core --save
+    ```
 
-```
+-   yarn
 
-```
+    ```shell
+    yarn add @graph-module/core --save
+    ```
+
+-   pnpm
+
+    ```shell
+    pnpm add @graph-module/core --save
+    ```
+
+## Description
+
+[maxgGraph](https://github.com/jwyGithub/maxGraph) compiled core code
+
+## Documention
+
+https://github.com/maxGraph/maxGraph
+

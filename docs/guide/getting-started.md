@@ -3,7 +3,7 @@
 -   ### script
 
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@graph-libs/core@0.0.1/dist/maxgraph.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@graph-module/core@0.0.1/dist/maxgraph.js"></script>
     <script>
         const graph = graphCore.init(container);
     </script>

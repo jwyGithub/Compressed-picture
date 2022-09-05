@@ -1,4 +1,4 @@
-import { InternalEvent, type Graph, RubberBandHandler } from '@graph-libs/core';
+import { InternalEvent, type Graph, RubberBandHandler } from '@graph-module/core';
 
 /**
  * @description graph 配置参数

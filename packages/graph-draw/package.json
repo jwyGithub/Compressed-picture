@@ -1,12 +1,12 @@
 {
-    "name": "@graph-module/geometry",
+    "name": "@graph-module/draw",
     "version": "0.0.1",
-    "description": "graph tool for geometry",
+    "description": "graph draw module",
     "main": "index.js",
-    "module": "dist/graph-geometry.esm-bundler.js",
+    "module": "dist/graph-draw.esm-bundler.js",
     "types": "dist/types/index.d.ts",
-    "unpkg": "dist/graph-geometry.global.js",
-    "jsdelivr": "dist/graph-geometry.global.js",
+    "unpkg": "dist/graph-draw.global.js",
+    "jsdelivr": "dist/graph-draw.global.js",
     "files": [
         "index.js",
         "dist"
@@ -16,7 +16,7 @@
         "registry": "https://registry.npmjs.org/"
     },
     "buildOptions": {
-        "name": "graphGeometry",
+        "name": "graphDraw",
         "compat": true,
         "formats": [
             "esm-bundler",
@@ -26,12 +26,9 @@
             "esm-browser"
         ]
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
     "keywords": [
         "graph",
-        "geometry"
+        "draw"
     ],
     "author": "jiangweiye",
     "license": "ISC",
@@ -43,3 +40,4 @@
         "@graph-module/shared": "workspace:^0.0.1"
     }
 }
+

@@ -1,36 +1,26 @@
-### 1. install
+# @graph-module/shared
 
--   use npm
+## Install
 
-    ```sh
-    npm i @graph-libs/shared --save
+-   npm
+
+    ```shell
+    npm install @graph-module/shared --save
     ```
 
--   use yarn
-    ```sh
-    yarn add @graph-libs/shared --save
-    ```
--   use pnpm
-    ```sh
-    pnpm add @graph-libs/shared --save
+-   yarn
+
+    ```shell
+    yarn add @graph-module/shared --save
     ```
 
-### 2. use
+-   pnpm
 
-```typescript
-import * as utils from '@graph-libs/shared';
-```
+    ```shell
+    pnpm add @graph-module/shared --save
+    ```
 
-### 3. type
+## Description
 
-```typescript
-import isArray from './shared/isArray';
-import isEmptyArray from './shared/isEmptyArray';
-import isEmptyObject from './shared/isEmptyObject';
-import isFunction from './shared/isFunction';
-import isObject from './shared/isObject';
-import averageDistribution from './distribution/average';
-import useID from './shared/useID';
-export { isArray, isEmptyArray, isEmptyObject, isFunction, isObject, averageDistribution, useID };
-```
+    graph tools
 

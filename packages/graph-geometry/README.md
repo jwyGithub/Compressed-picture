@@ -1,57 +1,96 @@
-### 1. install
+# @graph-module/geometry
 
--   use npm
+## Install
 
-    ```sh
-    npm i @graph-libs/geometry --save
+-   npm
+
+    ```shell
+    npm install @graph-module/geometry --save
     ```
 
--   use yarn
-    ```sh
-    yarn add @graph-libs/geometry --save
-    ```
--   use pnpm
-    ```sh
-    pnpm add @graph-libs/geometry --save
+-   yarn
+
+    ```shell
+    yarn add @graph-module/geometry --save
     ```
 
-### 2. use
+-   pnpm
+
+    ```shell
+    pnpm add @graph-module/geometry --save
+    ```
+
+## Description
+
+    set anchor points for drawings
+
+## Example
 
 ```typescript
-import { getGeometry } from '@graph-libs/geometry';
-
-const Geometry = getGeometry(0.25, 0);
-
-graph.draw({
+// 引入包
+import { Graph } from '@graph-module/core';
+// 引入draw包
+import { draw } from '@graph-module/draw';
+// 引入锚点包
+import { getGeometry } from '@graph-module/geometry';
+// 获取容器
+const container = <HTMLElement>document.getElementById('app');
+// 初始化容器
+const graph = new Graph(container);
+// 设置允许连接
+graph.setConnectable(true);
+// 定义getAllConnectionConstraints方法
+graph.getAllConnectionConstraints = function (terminal) {
+    if (terminal && terminal.cell) {
+        if (terminal?.shape?.stencil) {
+            if (terminal.shape.stencil.constraints) {
+                return terminal.shape.stencil.constraints;
+            }
+        } else if (terminal?.cell?.geometry?.constraints) {
+            return terminal.cell.geometry.constraints;
+        }
+    }
+    return null;
+};
+// 开始绘制
+draw(graph, {
     vertexs: [
         {
             id: 'vertex1',
             value: 'vertex1',
-            position: [500 / 2 - 100 / 2, 10],
+            position: [100, 100],
             size: [100, 100],
             style: {
-                shape: 'cylinder',
-                fillColor: '#ccc',
-                strokeColor: '#efefef',
-                fontSize: 14,
-                verticalAlign: 'middle'
+                shape: 'cloud'
             },
-            geometryClass: Geometry
+            // 给图形设置锚点属性
+            geometryClass: getGeometry()
+        },
+        {
+            id: 'vertex2',
+            value: 'vertex2',
+            position: [100, 300],
+            size: [100, 100],
+            style: {
+                shape: 'cloud'
+            },
+            // 给图形设置锚点属性
+            geometryClass: getGeometry()
+        }
+    ],
+    edges: [
+        {
+            id: 'vertex1-vertex2',
+            source: 'vertex1',
+            target: 'vertex2'
         }
     ]
 });
 ```
 
-### 3. type
+![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220905162532.png)
 
-```typescript
-export declare type getGeometry = (step?: number, start?: number) => typeof Geometry;
-/**
- * @description 分布模式
- * @param averageDistribution 平均分布
- * @param randomDistribution 随机分布
- */
-export declare type distributionPattern = 'averageDistribution';
-export declare const getGeometry: getGeometry;
-```
+## Documention
+
+https://jwygithub.github.io/graph-module/draw/geometry.html
 

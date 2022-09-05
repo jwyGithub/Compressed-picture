@@ -4,10 +4,10 @@
     "scripts": {
         "build:dev": "node scripts/build.js NODE_ENV=development",
         "build:prod": "node scripts/build.js NODE_ENV=production",
+        "release": "node scripts/release.js",
         "docs:dev": "vitepress dev docs --host",
         "docs:build": "vitepress build docs",
-        "docs:serve": "vitepress serve docs",
-        "release": "node scripts/release.js"
+        "docs:serve": "vitepress serve docs"
     },
     "repository": {
         "type": "git",
@@ -27,16 +27,13 @@
     },
     "homepage": "https://github.com/jwyGithub/graph-module#readme",
     "devDependencies": {
-        "@babel/core": "^7.18.13",
-        "@babel/plugin-transform-runtime": "^7.18.10",
-        "@babel/runtime-corejs3": "^7.18.9",
         "@rollup/plugin-babel": "^5.3.1",
         "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@rollup/plugin-replace": "^4.0.0",
         "@types/node": "^18.7.13",
-        "@vitejs/plugin-vue-jsx": "^2.0.0",
+        "@vitejs/plugin-vue-jsx": "^2.0.1",
         "execa": "5.0.1",
         "prettier": "^2.7.1",
         "rollup": "^2.78.1",
@@ -45,9 +42,7 @@
         "sass": "^1.54.8",
         "tslib": "^2.4.0",
         "typescript": "^4.8.2",
-        "vitepress": "1.0.0-alpha.13",
-        "vue": "^3.2.38"
+        "vitepress": "1.0.0-alpha.13"
     },
     "sideEffects": false
 }
-

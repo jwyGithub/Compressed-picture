@@ -1,4 +1,4 @@
-import { Graph } from '@graph-libs/core';
+import { Graph } from '@graph-module/core';
 
 /**
  * @description graph 配置参数

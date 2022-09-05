@@ -1,5 +1,5 @@
-import { ConnectionConstraint, Geometry, Point } from '@graph-libs/core';
-import { averageDistribution } from '@graph-libs/shared';
+import { ConnectionConstraint, Geometry, Point } from '@graph-module/core';
+import { averageDistribution } from '@graph-module/shared';
 
 export type getGeometry = (step?: number, start?: number) => typeof Geometry;
 
@@ -9,13 +9,12 @@ export type getGeometry = (step?: number, start?: number) => typeof Geometry;
  * @param randomDistribution 随机分布
  */
 export type distributionPattern = 'averageDistribution';
-
-export /**
+/**
  * @description 分布模式配置参数
  * @param step 间隔
  * @param start 开始
  */
-const getGeometry: getGeometry = (step: number = 0.25, start: number = 0) => {
+export const getGeometry: getGeometry = (step: number = 0.25, start: number = 0) => {
     const constraints: ConnectionConstraint[] = [];
     const coordinateX = averageDistribution(step, start);
 

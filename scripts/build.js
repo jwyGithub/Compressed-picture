@@ -19,7 +19,9 @@ function build(target) {
         const { NODE_ENV } = getEnv();
         return async () => {
             console.log('\x1b[33m%s\x1b[0m', `start build ${target} package...`);
-            await execa('rollup', ['-c', '--environment', [`TARGET:${target}`, `NODE_NEV:${NODE_ENV}`]], { stdio: 'inherit' });
+            await execa('rollup', ['-c', '--environment', [`TARGET:${target}`, `NODE_NEV:${NODE_ENV}`]], {
+                stdio: 'inherit'
+            });
             return `build ${target} package success`;
         };
     } catch (error) {

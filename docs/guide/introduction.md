@@ -6,35 +6,35 @@ Graph-lib is a secondary encapsulation based on maxgraph, which simplifies the u
 
 ### packages
 
--   **`@graph-libs/core`**
+-   **`@graph-module/core`**
 
     ```shell
-      npm install @graph-libs/core -S
+      npm install @graph-module/core -S
     ```
 
-    > documentation : [@graph-libs/core](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-core)
+    > documentation : [@graph-module/core](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-core)
 
--   **`@graph-libs/shared`**
+-   **`@graph-module/shared`**
 
     ```shell
-      npm install @graph-libs/shared -S
+      npm install @graph-module/shared -S
     ```
 
-    > documentation : [@graph-libs/shared](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-shared)
+    > documentation : [@graph-module/shared](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-shared)
 
--   **`@graph-libs/setting`**
+-   **`@graph-module/setting`**
 
     ```shell
-      npm install @graph-libs/setting -S
+      npm install @graph-module/setting -S
     ```
 
-    > documentation : [@graph-libs/setting](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-setting)
+    > documentation : [@graph-module/setting](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-setting)
 
--   **`@graph-libs/geometry`**
+-   **`@graph-module/geometry`**
 
     ```shell
-      npm install @graph-libs/geometry -S
+      npm install @graph-module/geometry -S
     ```
 
-    > documentation : [@graph-libs/geometry](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-geometry)
+    > documentation : [@graph-module/geometry](https://github.com/jwyGithub/graph-libs/tree/master/packages/graph-geometry)
 

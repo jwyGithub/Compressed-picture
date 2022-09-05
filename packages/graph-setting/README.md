@@ -1,136 +1,60 @@
-### 1. install
+# @graph-module/setting
 
--   use npm
+## Install
 
-    ```sh
-    npm i @graph-libs/setting --save
+-   npm
+
+    ```shell
+    npm install @graph-module/setting --save
     ```
 
--   use yarn
-    ```sh
-    yarn add @graph-libs/setting --save
-    ```
--   use pnpm
-    ```sh
-    pnpm add @graph-libs/setting --save
+-   yarn
+
+    ```shell
+    yarn add @graph-module/setting --save
     ```
 
-### 2. use
+-   pnpm
+
+    ```shell
+    pnpm add @graph-module/setting --save
+    ```
+
+## Description
+
+    set the container attribute and graph configuration
+
+## Example
 
 ```typescript
-import { globalConfig, graphConfig } from '@graph-libs/setting';
+// 引入包
+import { Graph } from '@graph-module/core';
+// 引入设置包
+import { globalConfig, graphConfig } from '@graph-module/setting';
+// 获取容器
+const container = <HTMLElement>document.getElementById('app');
+// 初始化容器
+const graph = new Graph(container);
+// container全局设置。比如禁用右键，开启鼠标框选。。
 globalConfig(
-    graph.graph,
+    graph,
     {
-        disableContextMenu: true
+        disableContextMenu: true,
+        rubberBand: false
     },
     container
 );
-
-graphConfig(graph.graph);
+// graph的设置，比如只读模式，禁止新的连接，重复连接等
+graphConfig(graph, {
+    readonly: false,
+    cellResize: false,
+    setConnectable: true,
+    cellMove: false,
+    setMultigraph: true
+});
 ```
 
-### 3. type
+## Documention
 
--   globalConfig 全局设置
-
--   **类型**
-
-```typescript
-interface GlobalConfig {
-    /**
-     * @description 禁用右键菜单
-     * @param true 禁用
-     * @param false 不禁用
-     * @default true
-     */
-    disableContextMenu?: boolean;
-    /**
-     * @description 鼠标框选
-     * @param true  开启
-     * @param false 不开启
-     * @default true
-     */
-    rubberBand?: boolean;
-}
-/**
- * @description graph 全局设置
- * @param config { GlobalConfig }
- *
- */
-const globalConfig: (graph: Graph, config: GlobalConfig, container?: HTMLElement) => void;
-```
-
--   graphConfig 全局设置
-
--   **类型**
-
-    ```typescript
-    interface GraphConfig {
-        /**
-         * @description 只读模式 (无法进行拖拽拉伸等操作)
-         * @param true  启动只读模式
-         * @param false 不启动只读模式
-         * @default false
-         */
-        readonly?: boolean;
-        /**
-         * @description 节点是否可以改变大小
-         * @param true  可以改变大小
-         * @param false 不可以改变大小
-         * @default true
-         */
-        cellResize?: boolean;
-        /**
-         * @description 节点是否可以移动
-         * @param true  可以移动
-         * @param false 不可以移动
-         * @default true
-         */
-        cellMove?: boolean;
-        /**
-         * @description 节点是否可以新的连接
-         * @param true  可以连接
-         * @param false 不可以连接
-         * @default true
-         */
-        setConnectable?: boolean;
-        /**
-         * @description 容器大小是否自适应
-         * @param true  自适应
-         * @param false 不自适应
-         * @default false
-         */
-        containerResize?: boolean;
-        /**
-         * @description 重复连接
-         * @param true  开启
-         * @param false 不开启
-         * @default false
-         */
-        setMultigraph?: boolean;
-        /**
-         * @description 是否可以解析html
-         * @param true  可以解析
-         * @param false 不可以解析
-         * @default true
-         */
-        setHtmlLabels?: boolean;
-        /**
-         * @description 是否允许移动 Vertex 的 Label
-         * @param true  可以移动
-         * @param false 不可以移动
-         * @default true
-         */
-        setVertexLabelsMovable?: boolean;
-        /**
-         * @description 是否允许连线的目标和源是同一元素
-         * @param true  可以移动
-         * @param false 不可以移动
-         * @default false
-         */
-        setAllowLoops?: boolean;
-    }
-    const graphConfig: (graph: Graph, config: GraphConfig) => void;
-    ```
+https://jwygithub.github.io/graph-module/config/global-config.html
 

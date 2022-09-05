@@ -51,7 +51,7 @@ export default defineConfig({
                 items: [{ text: 'Global Shape', link: '/shape/global-shape' }]
             }
         ],
-        socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-libs' }]
+        socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-module' }]
     },
     vite: {
         plugins: [
