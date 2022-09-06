@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as p}from"./app.ca65d0db.js";const i=JSON.parse('{"title":"Anchor","description":"","frontmatter":{},"headers":[],"relativePath":"draw/draw-anchor.md"}'),l={name:"draw/draw-anchor.md"},o=p("",2),e=[o];function t(c,r,D,y,F,C){return n(),a("div",null,e)}const m=s(l,[["render",t]]);export{i as __pageData,m as default};
