@@ -39,9 +39,10 @@ const mergeConfig = (config: GlobalConfig): Required<GlobalConfig> => {
  * @param config { GlobalConfig }
  *
  */
-export const globalConfig = (graph: Graph, config: GlobalConfig, container?: HTMLElement) => {
+export const globalConfig = (graph: Graph, config: GlobalConfig = {}) => {
+    const _container = graph.getContainer();
     const _config = mergeConfig(config);
-    _config.disableContextMenu && container && InternalEvent.disableContextMenu(container);
+    _config.disableContextMenu && _container && InternalEvent.disableContextMenu(_container);
     _config.rubberBand && new RubberBandHandler(graph);
 };
 

@@ -1,68 +1,70 @@
-# 默认样式
+# Style
 
-## 查看当前默认样式
+## get default edge style
 
--   **类型**
+-   **example**
 
-```typescript
-/**
- * @description 获取默认样式类型
- * @returns  CellStateStyle
- */
-export declare type getDefaultStyleType = (this: GraphCoreObject) => CellStateStyle<string>;
-```
+    ```typescript
+    import { Graph } from '@graph-module/core';
 
--   **示例**
+    const container = <HTMLDivElement>document.getElementById('app');
 
-```typescript
-const graph = graphCore.init(container);
+    const graph = new Graph(container);
 
-// 查看默认edge样式
-const defaultEdgeStyle = graph.getDefaultEdgeStyle();
+    const defaultEdgeStyle = graph.stylesheet.getDefaultEdgeStyle();
+    ```
 
-// 查看默认vertex样式
-const defaultVertexStyle = graph.getDefaultVertexStyle();
-```
+## get default vertex style
 
-## 修改默认样式
+-   **example**
 
--   **类型**
+    ```typescript
+    import { Graph } from '@graph-module/core';
 
-```typescript
-/**
- * @description 修改默认样式类型
- * @param style CellStateStyle
- */
-export declare type updateDefaultStyleType = <S>(this: GraphCoreObject, style: CellStateStyle<S>) => void;
-/**
- * @description 修改默认edge样式
- * @param this GraphCoreObject
- * @param style CellStateStyle
- */
-export declare const updateDefaultEdgeStyle: updateDefaultStyleType;
-/**
- * @description 修改默认vertex样式
- * @param this GraphCoreObject
- * @param style CellStateStyle
- */
-export declare const updateDefaultVertexStyle: updateDefaultStyleType;
-```
+    const container = <HTMLDivElement>document.getElementById('app');
 
--   **示例**
+    const graph = new Graph(container);
 
-```typescript
-const graph = graphCore.init(container);
-// 修改默认edge样式
-graph.updateDefaultEdgeStyle({
-    strokeColor: 'red',
-    fontSize: 20
-});
+    const defaultEdgeStyle = graph.stylesheet.getDefaultVertexStyle();
+    ```
 
-// 修改默认vertex样式;
-graph.updateDefaultVertexStyle<'customShape'>({
-    strokeColor: 'blue',
-    fontSize: 20,
-    shape: 'customShape'
-});
-```
+## update default vertex style
+
+-   **example**
+
+    ```typescript
+    import { CellStateStyle, Graph } from '@graph-module/core';
+    import { draw } from '@graph-module/draw';
+
+    const container = <HTMLDivElement>document.getElementById('app');
+
+    const graph = new Graph(container);
+
+    const style: CellStateStyle = {
+        shape: 'cloud',
+        strokeColor: 'red'
+    };
+    const _style = graph.stylesheet.createDefaultEdgeStyle();
+    graph.stylesheet.putDefaultVertexStyle(Object.assign({}, _style, style));
+    ```
+
+## update default edge style
+
+-   **example**
+
+    ```typescript
+    import { CellStateStyle, Graph } from '@graph-module/core';
+
+    const container = <HTMLDivElement>document.getElementById('app');
+
+    const graph = new Graph(container);
+
+    const style: CellStateStyle = {
+        shape: 'cloud',
+        strokeColor: 'red'
+    };
+
+    const _style = graph.stylesheet.createDefaultEdgeStyle();
+    graph.stylesheet.putDefaultEdgeStyle(Object.assign({}, _style, style));
+    ```
 

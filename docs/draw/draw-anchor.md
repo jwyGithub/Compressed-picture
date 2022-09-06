@@ -1,55 +1,66 @@
-# 锚点
+# Anchor
 
-## 类型
+-   **type**
 
-```typescript
-import { Geometry } from '@staryea/graph';
-/**
- * @param step 步进
- * @param start 开始
- */
-export declare type getGeometry = (step?: number, start?: number) => typeof Geometry;
-/**
- * @description 分布模式
- * @param averageDistribution 平均分布
- * @param randomDistribution 随机分布
- */
-export declare type distributionPattern = 'averageDistribution';
-export declare const getGeometry: getGeometry;
-```
+    ```typescript
+    type getGeometry = (step?: number, start?: number) => typeof Geometry;
+    /**
+     * @description 平均分布模式配置参数
+     * @param step 间隔
+     * @param start 开始
+     */
+    const getGeometry: getGeometry;
+    ```
 
-### 示例
+-   **example**
 
-```typescript
-// 引入包核心对象
-import { graphCore, Client } from '@staryea/graph-core';
-
-// 引入geometry包
-import { getGeometry } from '@staryea/graph-geometry';
-
-// 设置锚点样式图片位置
-Client.setImageBasePath('/images');
-
-// 创建容器
-const container = document.createElement('div');
-
-// 初始化容器
-const graph = graphCore.init(container);
-
-// 获取锚点类
-const Geometry = getGeometry(0.25, 0);
-
-// 开始绘制
-graph.draw({
-    vertexs: [
-        {
-            id: 'vertex1',
-            value: 'vertex1',
-            position: [500 / 2 - 100 / 2, 0],
-            size: [100, 100],
-            // 增加锚点类
-            geometryClass: Geometry
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入setting包
+    import { globalConfig, graphConfig } from '@graph-module/setting';
+    // 引入锚点包
+    import { getGeometry } from '@graph-module/geometry';
+    // 引入绘制包
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // container设置
+    globalConfig(graph);
+    // graph设置
+    graphConfig(graph, {
+        // 必须设置为true,锚点才生效
+        setConnectable: true
+    });
+    // 定义getAllConnectionConstraints方法
+    graph.getAllConnectionConstraints = function (terminal) {
+        if (terminal && terminal.cell) {
+            if (terminal.shape?.stencil) {
+                if (terminal.shape.stencil.constraints) {
+                    return terminal.shape.stencil.constraints;
+                }
+            } else if (terminal?.cell.geometry?.constraints) {
+                return terminal.cell.geometry.constraints;
+            }
         }
-    ]
-});
-```
+        return null;
+    };
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [300, 100],
+                // 设置锚点类
+                geometryClass: getGeometry()
+            }
+        ]
+    });
+    ```
+
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906105544.png)
+

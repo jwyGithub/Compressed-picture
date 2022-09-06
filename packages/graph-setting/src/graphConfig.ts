@@ -86,7 +86,7 @@ export interface GraphConfig {
 const mergeConfig = (config: GraphConfig): Required<GraphConfig> => {
     return {
         cellResize: true,
-        readonly: true,
+        readonly: false,
         cellMove: true,
         setConnectable: true,
         containerResize: false,
@@ -103,7 +103,7 @@ const mergeConfig = (config: GraphConfig): Required<GraphConfig> => {
  * @param config { GraphConfig }
  *
  */
-export const graphConfig = (graph: Graph, config: GraphConfig) => {
+export const graphConfig = (graph: Graph, config: GraphConfig = {}) => {
     const _config = mergeConfig(config);
     graph.setEnabled(!_config.readonly);
     graph.setCellsResizable(_config.cellResize);

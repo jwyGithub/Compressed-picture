@@ -1,62 +1,60 @@
-# 全局样式
+# Style
 
-## 注册全局样式
+## register global style
 
--   **类型**
+-   **type**
 
-```typescript
-/**
- * @param registerStyleConfig CellStateStyle
- */
-export declare type registerStyleConfig<S extends string> = CellStateStyle<S>;
+    ```typescript
+    type registerStyleConfig<S extends string> = CellStateStyle<S>;
+    /**
+     * @public
+     * @description 注册全局样式
+     * @param graph Graph
+     * @param styleName style name
+     * @param config registerStyleConfig
+     * @return Graph
+     */
+    declare const registerStyle: <S extends string>(graph: Graph, styleName: string, config: registerStyleConfig<S>) => Graph;
+    ```
 
-/**
- * @param styleName 样式名称
- * @param config 样式配置
- */
-export declare type GraphCoreType<S extends string> = {
-    registerStyle: (styleName: string, config: registerStyleConfig<S>) => void;
-};
-```
+-   **example**
 
--   **示例**
-
-```typescript
-// 引入包核心对象
-import { graphCore } from '@staryea/graph-core';
-// 使用registerStyle方法注册样式
-graphCore.registerStyle('customStyle', {
-    fillColor: '#9d9d9d',
-    strokeColor: 'blue',
-    fontColor: 'red',
-    fontSize: 20,
-    fontStyle: 4
-});
-
-// 创建容器
-const container = document.createElement('div');
-
-// 初始化容器
-const graph = graphCore.init(container);
-
-// 开始绘制
-graph.draw({
-    vertexs: [
-        {
-            id: 'vertex1',
-            value: 'vertex1',
-            position: [500 / 2 - 100 / 2, 0],
-            size: [100, 100],
-            style: {
-                // 在单独样式设置里面使用自定义样式
-                baseStyleNames: ['customStyle']
+    ```typescript
+    // 引入包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制包
+    import { draw } from '@graph-module/draw';
+    // 引入注册包
+    import { registerStyle } from '@graph-module/register';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 注册全局样式
+    registerStyle(graph, 'customStyle', {
+        fontColor: '#fff',
+        fontSize: 20,
+        fontStyle: 7,
+        shape: 'cylinder',
+        strokeColor: '#000',
+        fillColor: '#ccc'
+    });
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [300, 100],
+                style: {
+                    // 使用自定义样式
+                    baseStyleNames: ['customStyle']
+                }
             }
-        }
-    ],
-    vertexStyle: {
-        // 在通用样式设置里面使用自定义样式
-        baseStyleNames: ['customStyle']
-    }
-});
-```
+        ]
+    });
+    ```
+
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906114159.png)
 

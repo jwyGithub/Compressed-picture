@@ -1,193 +1,280 @@
-# 开始绘制
+# Draw
 
--   **类型**
+drawing in container
 
-```typescript
-/**
- * @description vertex 参数选项
- * @param { parent } 要添加的父级
- * @param { id } vertex的id标识
- * @param { value } vertex的value
- * @param { position } vertex的位置 position[0] : x , position[1] : y
- * @param { size } vertex的大小 size[0] : width , size[1] : height
- * @param { style } vertex的样式 CellStyle
- * @param { relative } vertex的relative
- * @param { geometryClass } vertex的锚点位置
- */
-export declare type vertexParams<S> = {
-    parent?: Cell | null;
-    id?: string | null;
-    value?: string | null;
-    position?: [number, number] | null;
-    size?: [number, number] | null;
-    style?: CellStyle<S> | null;
-    relative?: boolean | null;
-    geometryClass?: typeof Geometry;
-};
-/**
- * @description edge 参数选项
- * @param { parent } 要添加的父级
- * @param { value } edge 值
- * @param { source } 连接点的开始cell
- * @param { target } 连接点的结束cell
- * @param { style } edge的样式
- */
-export declare type edgeParams<S> = {
-    id?: string | null;
-    parent?: Cell | null;
-    value?: string | null;
-    source?: string | Cell | null;
-    target?: string | Cell | null;
-    style?: CellStyle<S> | null;
-};
-/**
- * @description 绘制配置选项
- * @param {vertex} vertex cell -> vertex
- * @param {vertexStyle} vertex 的通用样式
- * @param {edge} edge cell -> edge
- * @param {edgeStyle} edge 的通用样式
- */
-export interface drawConfig<S> {
-    vertexs?: vertexParams<S>[];
-    vertexStyle?: CellStyle<S>;
-    edges?: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[]);
-    edgeStyle?: CellStyle<S>;
-}
-export declare type drawReturn<S> = {
-    vertexs: {
-        [key: string]: Cell;
+-   **type**
+
+    ```typescript
+    /**
+     * @description 绘制配置选项
+     * @param {vertex} vertex cell -> vertex
+     * @param {vertexStyle} vertex 的通用样式
+     * @param {edge} edge cell -> edge
+     * @param {edgeStyle} edge 的通用样式
+     */
+    interface drawConfig<S> {
+        vertexs?: vertexParams<S>[];
+        vertexStyle?: CellStyle<S>;
+        edges?: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[]);
+        edgeStyle?: CellStyle<S>;
+    }
+
+    /**
+     * @description draw function type
+     */
+    type drawType = <S>(graph: Graph, config: drawConfig<S>) => drawReturn<S>;
+    /**
+     * @description 绘制
+     * @param {config} config
+     * @return
+     */
+    declare const draw: drawType;
+    ```
+
+## draw vertex
+
+-   **type**
+
+    ```typescript
+    /**
+     * @description vertex 参数选项
+     * @param { parent } 要添加的父级
+     * @param { id } vertex的id标识
+     * @param { value } vertex的value
+     * @param { position } vertex的位置 position[0] : x , position[1] : y
+     * @param { size } vertex的大小 size[0] : width , size[1] : height
+     * @param { style } vertex的样式 CellStyle
+     * @param { relative } vertex的relative
+     * @param { geometryClass } vertex的锚点位置
+     */
+    type vertexParams<S> = {
+        parent?: Cell | null;
+        id?: string | null;
+        value?: string | null;
+        position?: [number, number] | null;
+        size?: [number, number] | null;
+        style?: CellStyle<S> | null;
+        relative?: boolean | null;
+        geometryClass?: typeof Geometry;
     };
-    edges: {
-        [key: string]: Cell;
-    };
-    drawVertexs: <S>(vertexs: vertexParams<S> | vertexParams<S>[]) => {
-        [key: string]: Cell;
-    };
-    drawEdges: (edges: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[])) => void;
-};
-/**
- * @description draw function type
- */
-export declare type drawType = <S>(this: GraphCoreObject, config: drawConfig<S>) => drawReturn<S>;
-/**
- * @description 绘制
- * @param {config} config
- * @return
- */
-export declare const draw: drawType;
-```
+    ```
 
-## 绘制 vertex
+-   **example**
 
-### 示例
+    -   basic drawing
 
-```typescript
-// 引入包核心对象
-import { graphCore } from '@staryea/graph-core';
-
-// 创建容器
-const container = document.createElement('div');
-
-// 初始化容器
-const graph = graphCore.init(container);
-
-// 开始绘制
-graph.draw({
-    vertexs: [
-        {
-            id: 'vertex1',
-            value: 'vertex1',
-            position: [500 / 2 - 100 / 2, 0],
-            size: [100, 100],
-            style: {
-                shape: 'cylinder',
-                fillColor: '#ccc',
-                strokeColor: '#efefef',
-                fontSize: 14,
-                verticalAlign: 'middle'
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制函数
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [100, 100]
             }
+        ]
+    });
+    ```
+
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906103034.png)
+
+    -   set style
+
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制函数
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [100, 100],
+                style: {
+                    //  设置图形样式
+                    shape: 'cloud',
+                    // 边框颜色
+                    strokeColor: 'red',
+                    // 填充颜色
+                    fillColor: 'blue',
+                    // 字体颜色
+                    fontColor: '#fff',
+                    // 字体样式
+                    fontFamily: '宋体'
+                }
+            }
+        ]
+    });
+    ```
+
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906103122.png)
+
+    -   set general style
+
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制函数
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [100, 100]
+            },
+            {
+                id: 'vertex2',
+                value: 'vertex2',
+                size: [100, 100],
+                position: [300, 100]
+            }
+        ],
+        vertexStyle: {
+            //  设置图形样式
+            shape: 'doubleEllipse',
+            // 边框颜色
+            strokeColor: '#fff',
+            // 填充颜色
+            fillColor: '#ccc',
+            // 字体颜色
+            fontColor: '#fff',
+            // 字体样式
+            fontFamily: '宋体'
         }
-    ],
-    vertexStyle: {
-        shape: 'cloud'
-    }
-});
-```
+    });
+    ```
 
-## 绘制 edge
+    > `vertexs[item].style > config.vertexStyle`
 
-### 示例
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906103650.png)
 
-```typescript
-// 引入包核心对象
-import { graphCore } from '@staryea/graph-core';
+## draw edge
 
-// 创建容器
-const container = document.createElement('div');
+-   **type**
 
-// 初始化容器
-const graph = graphCore.init(container);
+    ```typescript
+    /**
+     * @description edge 参数选项
+     * @param { parent } 要添加的父级
+     * @param { value } edge 值
+     * @param { source } 连接点的开始cell
+     * @param { target } 连接点的结束cell
+     * @param { style } edge的样式
+     */
+    type edgeParams<S> = {
+        id?: string | null;
+        parent?: Cell | null;
+        value?: string | null;
+        source?: string | Cell | null;
+        target?: string | Cell | null;
+        style?: CellStyle<S> | null;
+    };
+    ```
 
-// 开始绘制
-graph.draw({
-   edges: [
-        {
-            id: 'edge1',
-            value: 'vertex1 - vertex2',
-            source: 'vertex1',
-            target: 'vertex2'
-        }
-    ]
-    edgeStyle: {
-        strokeColor: 'red'
-    }
-});
-```
+-   **example**
 
-## 回调函数方式绘制 edge
+    -   array drawing
 
-### 示例
-
-```typescript
-// 引入包核心对象
-import { graphCore } from '@staryea/graph-core';
-
-// 创建容器
-const container = document.createElement('div');
-
-// 初始化容器
-const graph = graphCore.init(container);
-
-// 开始绘制
-graph.draw({
-    vertexs: [
-        {
-            id: 'vertex1',
-            value: 'vertex1',
-            position: [500 / 2 - 100 / 2, 10],
-            size: [100, 100]
-        },
-        {
-            id: 'vertex2',
-            value: 'vertex2',
-            position: [0, 200],
-            size: [100, 100]
-        }
-    ],
-    edges: vertexs => {
-        return [
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制函数
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [100, 100]
+            },
+            {
+                id: 'vertex2',
+                value: 'vertex2',
+                size: [100, 100],
+                position: [300, 100]
+            }
+        ],
+        edges: [
             {
                 id: 'edge1',
-                value: 'vertex1 - vertex2',
-                source: vertexs.vertex1,
-                target: vertexs.vertex2
+                source: 'vertex1',
+                target: 'vertex2'
             }
-        ];
-    }
-});
-```
+        ]
+    });
+    ```
 
-### 参数解释
+    ![](https://cdn.jsdelivr.net/gh/jwyGithub/images/graph-module/20220906104207.png)
+
+    -   draw by callback function
+
+    ```typescript
+    // 引入核心包
+    import { Graph } from '@graph-module/core';
+    // 引入绘制函数
+    import { draw } from '@graph-module/draw';
+    // 获取容器
+    const container = <HTMLDivElement>document.getElementById('app');
+    // 初始化容器
+    const graph = new Graph(container);
+    // 绘制
+    draw(graph, {
+        vertexs: [
+            {
+                id: 'vertex1',
+                value: 'vertex1',
+                size: [100, 100],
+                position: [100, 100]
+            },
+            {
+                id: 'vertex2',
+                value: 'vertex2',
+                size: [100, 100],
+                position: [300, 100]
+            }
+        ],
+        edges: vertesx => {
+            return [
+                {
+                    id: 'edge1',
+                    source: vertesx.vertex1,
+                    target: vertesx.vertex2
+                }
+            ];
+        }
+    });
+    ```
+
+### Tips
 
 draw 函数接收一个配置对象`drawConfig`,drawConfig 包括 4 个内容:
 

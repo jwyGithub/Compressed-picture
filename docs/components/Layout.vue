@@ -1,7 +1,5 @@
 <script lang="tsx">
-import { defineComponent, PropType } from "vue";
-
-export default defineComponent({
+export default {
     name: 'Home',
     setup(props, { emit, expose, slots, attrs }) {
         return () => (
@@ -18,7 +16,7 @@ export default defineComponent({
             </div>
         );
     }
-});
+};
 </script>
 
 <style lang="scss" scoped>

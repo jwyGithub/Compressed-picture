@@ -30,7 +30,10 @@ export default defineConfig({
             },
             {
                 text: 'Config',
-                items: [{ text: 'Global Config', link: '/config/global-config' }]
+                items: [
+                    { text: 'Global Config', link: '/config/global-config' },
+                    { text: 'Graph Config', link: '/config/graph-config' }
+                ]
             },
             {
                 text: 'Draw',
@@ -49,6 +52,13 @@ export default defineConfig({
             {
                 text: 'Shape',
                 items: [{ text: 'Global Shape', link: '/shape/global-shape' }]
+            },
+            {
+                text: 'Event',
+                items: [
+                    { text: 'Element Event', link: '/event/element-event' },
+                    { text: 'Graph Event', link: '/event/graph-event' }
+                ]
             }
         ],
         socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-module' }]

@@ -1,0 +1,46 @@
+{
+    "name": "@graph-module/event",
+    "version": "0.0.1",
+    "description": "graph event module",
+    "main": "index.js",
+    "module": "dist/graph-event.esm-bundler.js",
+    "types": "dist/types/index.d.ts",
+    "unpkg": "dist/graph-event.global.js",
+    "jsdelivr": "dist/graph-event.global.js",
+    "files": [
+        "index.js",
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "buildOptions": {
+        "name": "graphEvent",
+        "compat": true,
+        "formats": [
+            "esm-bundler",
+            "cjs",
+            "cjs.prod",
+            "global",
+            "esm-browser"
+        ]
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "graph",
+        "event"
+    ],
+    "author": "jiangweiye",
+    "license": "ISC",
+    "sideEffects": false,
+    "peerDependencies": {
+        "@graph-module/core": "workspace:^0.0.1"
+    },
+    "dependencies": {
+        "@graph-module/shared": "workspace:^0.0.1"
+    }
+}
+

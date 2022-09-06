@@ -40,7 +40,7 @@ async function* generateSequence(data) {
 }
 
 (async () => {
-    let generator = generateSequence(targets.reverse().map(target => build(target)));
+    let generator = generateSequence(['graph-event'].reverse().map(target => build(target)));
     for await (let msg of generator) {
         console.log('\x1b[33m%s\x1b[0m', msg);
     }
