@@ -6,7 +6,7 @@ export default defineConfig({
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'Graph-libs'
+            title: 'Graph-module'
         }
     },
 

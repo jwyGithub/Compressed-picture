@@ -1,4 +1,4 @@
-## This library is an extension of the maxgraph libraries. It extracts the relatively repetitive settings in the project into a separate package and builds it with graph as the core
+## @graph-module
 
 ### 1. related links
 
