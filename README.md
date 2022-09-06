@@ -6,21 +6,21 @@
 -   https://github.com/maxGraph/maxGraph
 -   https://github.com/jgraph/mxgraph
 
-### 2. examples
+### 2. packages
 
--   https://github.com/jgraph/mxgraph/tree/master/javascript/examples
+-   @graph-module/core
 
-### 3. packages
+-   @graph-module/draw
 
--   @graph-libs/core
+-   @graph-module/event
 
--   @graph-libs/shared
+-   @graph-module/geometry
 
--   @graph-libs/setting
+-   @graph-module/register
 
--   @graph-libs/geometry
+-   @graph-module/setting
 
-### 4. documention
+### 3. documention
 
-https://jwygithub.github.io/graph-libs/
+https://jwygithub.github.io/graph-module/
 
