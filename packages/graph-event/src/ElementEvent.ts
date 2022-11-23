@@ -1,4 +1,4 @@
-import { InternalEvent, KeyboardEventListener, MouseEventListener } from '@graph-module/core';
+import { InternalEvent, KeyboardEventListener, MouseEventListener } from '@maxgraph/core';
 
 class ElementEvent {
     private root!: HTMLElement;

@@ -1,4 +1,4 @@
-import { Graph } from '@graph-module/core';
+import { Graph } from '@maxgraph/core';
 
 /**
  * @description graph 配置参数

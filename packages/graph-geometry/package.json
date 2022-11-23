@@ -37,9 +37,10 @@
     "license": "ISC",
     "sideEffects": false,
     "peerDependencies": {
-        "@graph-module/core": "workspace:^0.0.1"
+        "@maxgraph/core": "^0.1.0"
     },
     "dependencies": {
         "@graph-module/shared": "workspace:^0.0.1"
     }
 }
+

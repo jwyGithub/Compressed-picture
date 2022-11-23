@@ -1,6 +1,6 @@
-import { AbstractCanvas2D, CellRenderer, Rectangle, RectangleShape, Shape, StencilShape, type CellStateStyle, type Graph } from '@graph-module/core';
+import { AbstractCanvas2D, CellRenderer, Rectangle, RectangleShape, Shape, StencilShape, type CellStateStyle, type Graph } from '@maxgraph/core';
 
-export type registerStyleConfig<S extends string> = CellStateStyle<S>;
+export type registerStyleConfig<S extends string> = CellStateStyle;
 /**
  * @public
  * @description 注册全局样式

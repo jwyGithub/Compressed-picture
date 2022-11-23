@@ -54,7 +54,7 @@ function createConfig(format, output) {
         output: {
             ...output,
             globals: {
-                '@graph-module/core': 'graph'
+                '@maxgraph/core': 'maxgraph'
             },
             exports: 'auto'
         },
@@ -81,7 +81,7 @@ function createConfig(format, output) {
                 preventAssignment: true
             })
         ].filter(Boolean),
-        external: ['@graph-module/core']
+        external: ['@maxgraph/core']
     });
 }
 

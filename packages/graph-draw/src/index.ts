@@ -1,4 +1,4 @@
-import { CellStyle, Cell, Geometry, Graph } from '@graph-module/core';
+import { CellStyle, Cell, Geometry, Graph } from '@maxgraph/core';
 import { isEmptyArray, isFunction } from '@graph-module/shared';
 
 /**
@@ -18,7 +18,7 @@ export type vertexParams<S> = {
     value?: string | null;
     position?: [number, number] | null;
     size?: [number, number] | null;
-    style?: CellStyle<S> | null;
+    style?: CellStyle | null;
     relative?: boolean | null;
     geometryClass?: typeof Geometry;
 };
@@ -37,7 +37,7 @@ export type edgeParams<S> = {
     value?: string | null;
     source?: string | Cell | null;
     target?: string | Cell | null;
-    style?: CellStyle<S> | null;
+    style?: CellStyle | null;
 };
 
 /**
@@ -49,9 +49,9 @@ export type edgeParams<S> = {
  */
 export interface drawConfig<S> {
     vertexs?: vertexParams<S>[];
-    vertexStyle?: CellStyle<S>;
+    vertexStyle?: CellStyle;
     edges?: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[]);
-    edgeStyle?: CellStyle<S>;
+    edgeStyle?: CellStyle;
 }
 
 export type drawReturn<S> = {

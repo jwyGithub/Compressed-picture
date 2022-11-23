@@ -1,4 +1,4 @@
-import { ConnectionConstraint, Geometry, Point } from '@graph-module/core';
+import { ConnectionConstraint, Geometry, Point } from '@maxgraph/core';
 import { averageDistribution } from '@graph-module/shared';
 
 export type getGeometry = (step?: number, start?: number) => typeof Geometry;

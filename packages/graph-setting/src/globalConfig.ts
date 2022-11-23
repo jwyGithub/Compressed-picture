@@ -1,4 +1,4 @@
-import { InternalEvent, type Graph, RubberBandHandler } from '@graph-module/core';
+import { InternalEvent, type Graph, RubberBandHandler } from '@maxgraph/core';
 
 /**
  * @description graph 配置参数

@@ -1,4 +1,4 @@
-import { InternalEvent, Graph, EventObject } from '@graph-module/core';
+import { InternalEvent, Graph, EventObject } from '@maxgraph/core';
 
 interface GraphEventType {
     activate: typeof InternalEvent.ACTIVATE;
