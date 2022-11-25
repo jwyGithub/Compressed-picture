@@ -33,7 +33,7 @@ async function* generateSequence(data) {
 }
 
 (async () => {
-    let generator = generateSequence(targets.map(target => release(target)));
+    let generator = generateSequence(['graph-draw'].map(target => release(target)));
     for await (let msg of generator) {
         console.log('\x1b[33m%s\x1b[0m', msg);
     }

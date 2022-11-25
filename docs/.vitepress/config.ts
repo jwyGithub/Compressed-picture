@@ -2,11 +2,11 @@ import { defineConfig } from 'vitepress';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 
 export default defineConfig({
-    base: '/graph-module/',
+    base: '/maxGraph-composition-api/',
     locales: {
         '/': {
             lang: 'en-US',
-            title: 'Graph-module'
+            title: 'maxGraph'
         }
     },
 
@@ -61,7 +61,7 @@ export default defineConfig({
                 ]
             }
         ],
-        socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/graph-module' }]
+        socialLinks: [{ icon: 'github', link: 'https://github.com/jwyGithub/maxGraph-composition-api' }]
     },
     vite: {
         plugins: [
