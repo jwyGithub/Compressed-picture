@@ -16,3 +16,13 @@
 
 https://jwygithub.github.io/maxGraph-composition-api/
 
+### 4. build
+
+```shell
+git clone https://github.com/jwyGithub/maxGraph-composition-api.git
+pnpm i
+pnpm run build:prod
+cd example
+pnpm run dev
+```
+

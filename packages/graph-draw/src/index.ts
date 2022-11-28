@@ -1,5 +1,5 @@
-import { CellStyle, Cell, Geometry, Graph } from '@maxgraph/core';
-import { isEmptyArray, isFunction } from '@graph-module/shared';
+import { CellStyle, Cell, Geometry, Graph, ShapeValue } from '@maxgraph/core';
+import { isEmptyArray, isFunction } from '@graph/shared';
 
 /**
  * @description vertex 参数选项
@@ -12,7 +12,7 @@ import { isEmptyArray, isFunction } from '@graph-module/shared';
  * @param { relative } vertex的relative
  * @param { geometryClass } vertex的锚点位置
  */
-export type vertexParams<S> = {
+export type vertexParams = {
     parent?: Cell | null;
     id?: string | null;
     value?: string | null;
@@ -31,7 +31,7 @@ export type vertexParams<S> = {
  * @param { target } 连接点的结束cell
  * @param { style } edge的样式
  */
-export type edgeParams<S> = {
+export type edgeParams = {
     id?: string | null;
     parent?: Cell | null;
     value?: string | null;
@@ -47,42 +47,56 @@ export type edgeParams<S> = {
  * @param {edge} edge cell -> edge
  * @param {edgeStyle} edge 的通用样式
  */
-export interface drawConfig<S> {
-    vertexs?: vertexParams<S>[];
+export interface IdrawConfig {
+    vertexs?: vertexParams[];
     vertexStyle?: CellStyle;
-    edges?: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[]);
+    edges?: edgeParams[] | ((vertesx: { [key: string]: Cell }) => edgeParams[]);
     edgeStyle?: CellStyle;
 }
 
-export type drawReturn<S> = {
+export type drawReturn = {
     vertexs: { [key: string]: Cell };
     edges: { [key: string]: Cell };
-    drawVertexs: <S>(vertexs: vertexParams<S> | vertexParams<S>[]) => {
+    drawVertexs: (vertexs: vertexParams | vertexParams[]) => {
         [key: string]: Cell;
     };
-    drawEdges: (edges: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[])) => void;
+    drawEdges: (edges: edgeParams[] | ((vertesx: { [key: string]: Cell }) => edgeParams[])) => void;
 };
 
 /**
  * @description draw function type
  */
-export type drawType = <S>(graph: Graph, config: drawConfig<S>) => drawReturn<S>;
+export type drawType = (graph: Graph, config: IdrawConfig) => drawReturn;
 
 /**
  * @description 绘制
  * @param {config} config
- * @return
+ * @return 
+ * @example
+ * draw(graph, {
+       vertexs: [
+            {
+                id: '',
+                value: '',
+                position: [0, 0],
+                size: [50, 50],
+                style: {
+                    shape: 'cloud'
+                }
+            }
+        ]
+    });
  */
-export const draw: drawType = function <S>(graph: Graph, config: drawConfig<S>): drawReturn<S> {
+export const draw: drawType = function (graph: Graph, config: IdrawConfig): drawReturn {
     const parent = graph.getDefaultParent();
     const { vertexs, vertexStyle, edges, edgeStyle } = config;
 
     const vertexsMap: { [key: string]: Cell } = {};
     const edgesMap: { [key: string]: Cell } = {};
-    const drawVertexs = <S>(vertexs: vertexParams<S>[] | vertexParams<S>) => {
+    const drawVertexs = (vertexs: vertexParams[] | vertexParams) => {
         const _vertexs = Array.isArray(vertexs) ? vertexs : [vertexs];
         _vertexs.forEach((item, idx) => {
-            const vertexParams: Required<vertexParams<S>> = {
+            const vertexParams: Required<vertexParams> = {
                 parent: item.parent ?? parent,
                 id: item.id ?? idx + '',
                 value: item.value ?? '',
@@ -99,13 +113,13 @@ export const draw: drawType = function <S>(graph: Graph, config: drawConfig<S>):
         return vertexsMap;
     };
 
-    const drawEdges = (edges: edgeParams<S>[] | ((vertesx: { [key: string]: Cell }) => edgeParams<S>[])) => {
-        let _edges: edgeParams<S>[] = isFunction(edges) ? (edges as Function)(vertexsMap) : edges;
+    const drawEdges = (edges: edgeParams[] | ((vertesx: { [key: string]: Cell }) => edgeParams[])) => {
+        let _edges: edgeParams[] = isFunction(edges) ? (edges as Function)(vertexsMap) : edges;
 
         _edges.forEach((item, idx) => {
             item.source = item.source ?? '';
             item.target = item.target ?? '';
-            const edgeParams: Required<edgeParams<S>> = {
+            const edgeParams: Required<edgeParams> = {
                 id: item.id ?? idx + '',
                 parent: item.parent ?? parent,
                 value: item.value ?? '',
@@ -120,7 +134,7 @@ export const draw: drawType = function <S>(graph: Graph, config: drawConfig<S>):
     };
 
     graph.batchUpdate(() => {
-        vertexs && !isEmptyArray(vertexs) && drawVertexs<S>(vertexs);
+        vertexs && !isEmptyArray(vertexs) && drawVertexs(vertexs);
         edges && drawEdges(edges);
     });
 

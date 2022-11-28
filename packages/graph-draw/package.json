@@ -38,7 +38,7 @@
         "@maxgraph/core": "^0.1.0"
     },
     "dependencies": {
-        "@graph-module/shared": "workspace:^0.0.1"
+        "@graph/shared": "workspace:^0.0.1"
     }
 }
 
